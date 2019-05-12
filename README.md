@@ -52,8 +52,8 @@ Table_add_column(table, 13, "String Column", table_COLUMN_LEFT, table_COLUMN_STR
  
  * **RESULT**
  
- | Column 1 | Column 2 | Column 3 | Column 4      |
- | -------- | -------- | -------- | ------------- |
- | 1.5      | 1        | true     | first string  |
- | 2.5      | 6        | false    | second string |
- | 3.9      | 10       | true     | third string  |
+ | Real Column| Integer Column | Bool Column | String Column |
+ | ---------- | -------------- | ----------- | ------------- |
+ | 1.5        | 1              | true        | first string  |
+ | 2.5        | 6              | false       | second string |
+ | 3.9        | 10             | true        | third string  |
