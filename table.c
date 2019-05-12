@@ -120,10 +120,14 @@ void Table_add_row(Table table, ...) {
 void Table_print(Table table) {
     /*print columns*/
     char line[table->_line_width];
+    memset(line, 0, table->_line_width);
+
+    char* content;
     TableColumn* col;
     for (int i = 0; i < table->_columns_size; ++i) {
         col = table->_columns + i;
-        char content[col->_width];
+        content = malloc(col->_width);
+
         if (col->_style == table_COLUMN_LEFT)
             sprintf(content, "|%-*s|", col->_width - 2, col->_name);
         else if (col->_style == table_COLUMN_RIGHT)
@@ -133,15 +137,18 @@ void Table_print(Table table) {
             strcpy(line, content);
         else
             strncat(line, content, col->_width);
+
+        free(content);
     }
     printf("%s\n", line);
+    memset(line, 0, table->_line_width);
 
     /*print rows*/
     for (int i = 0; i < table->_rows_size; ++i) {
         TableData* row = table->_rows + i * table->_columns_size;
         for (int j = 0; j < table->_columns_size; ++j) {
             col = table->_columns + j;
-            char content[col->_width];
+            content = malloc(col->_width);
 
             if (col->_dt_type == table_COLUMN_REAL)
                 sprintf(content, col->_fmt, col->_width - 2, (row + j)->_real);
@@ -154,7 +161,10 @@ void Table_print(Table table) {
                 strcpy(line, content);
             else
                 strncat(line, content, col->_width);
+
+            free(content);
         }
         printf("%s\n", line);
+        memset(line, 0, table->_line_width);
     }
 }
