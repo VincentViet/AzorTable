@@ -11,10 +11,10 @@ C-99 Table library
 * Add column to table
 
 ```c
-Table_add_column(table, 7, "Column 1", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 7, "Column 2", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 7, "Column 3", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 7, "Column 4", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 8, "Column 1", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 8, "Column 2", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 8, "Column 3", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 8, "Column 4", table_COLUMN_LEFT, table_COLUMN_INTEGER);
 ```
   
 * **enum** `ColumnStyle`: is used to align content when print to console.
