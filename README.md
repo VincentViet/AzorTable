@@ -11,10 +11,10 @@ C-99 Table library
 * Add column to table
 
 ```c
-Table_add_column(table, 8, "Column 1", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 8, "Column 2", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 8, "Column 3", table_COLUMN_LEFT, table_COLUMN_INTEGER);
-Table_add_column(table, 8, "Column 4", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 11, "Real Column", table_COLUMN_LEFT, table_COLUMN_REAL);
+Table_add_column(table, 14, "Integer Column", table_COLUMN_LEFT, table_COLUMN_INTEGER);
+Table_add_column(table, 11, "Bool Column", table_COLUMN_LEFT, table_COLUMN_BOOL);
+Table_add_column(table, 13, "String Column", table_COLUMN_LEFT, table_COLUMN_STRING);
 ```
   
 * **enum** `ColumnStyle`: is used to align content when print to console.
@@ -36,9 +36,9 @@ Table_add_column(table, 8, "Column 4", table_COLUMN_LEFT, table_COLUMN_INTEGER);
  * Add row to table
  
  ```c
- Table_add_row(table, 1, 2, 3, 4);
- Table_add_row(table, 5, 6, 7, 8);
- Table_add_row(table, 9, 10, 11, 12);
+ Table_add_row(table, 1.5f, 1, 1, "first string");
+ Table_add_row(table, 2.5f, 6, 0, "second string");
+ Table_add_row(table, 3.9f, 10, 1, "third string");
  ```
  * Print table to console
  ```c
@@ -52,8 +52,8 @@ Table_add_column(table, 8, "Column 4", table_COLUMN_LEFT, table_COLUMN_INTEGER);
  
  * **RESULT**
  
- | Column 1 | Column 2 | Column 3 | Column 4|
- | -------- | -------- | -------- | ------- |
- | 1        | 2        | 3        | 4       |
- | 5        | 6        | 7        | 8       |
- | 9        | 10       | 11       | 12      |
+ | Column 1 | Column 2 | Column 3 | Column 4      |
+ | -------- | -------- | -------- | ------------- |
+ | 1.5      | 1        | true     | first string  |
+ | 2.5      | 6        | false    | second string |
+ | 3.9      | 10       | true     | third string  |
